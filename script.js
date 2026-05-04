@@ -351,14 +351,8 @@ function updateCoupleTimer() {
     const timerElement = document.getElementById('coupleTimer');
     if (!timerElement) return;
 
-    timerElement.style.display = '';
-
-    const startDate = new Date(getCoupleStartDate());
-    const today = new Date();
-    const timeDiff = today - startDate;
-    const days = Math.max(0, Math.floor(timeDiff / (1000 * 60 * 60 * 24)));
-
-    timerElement.textContent = `${days} jour${days > 1 ? 's' : ''} ensemble ❤️`;
+    timerElement.textContent = '';
+    timerElement.style.display = 'none';
 }
 
 function getCoupleStartDate() {
