@@ -1,0 +1,99 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║              PUSH SUR GITHUB ET DÉPLOYER SUR VERCEL                        ║
+║                    Commandes Exactes à Copier-Coller                       ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+
+⚠️  AVANT DE COMMENCER:
+
+1. Créez un repo GitHub:
+   → Allez sur: https://github.com/new
+   → Nommez-le: notre-univers
+   → Cochez "Public"
+   → Cliquez "Create repository"
+
+2. Vous verrez une URL: https://github.com/VOTREUSERNAME/notre-univers
+   → Gardez cette URL, vous la mettrez ci-dessous
+
+
+═══════════════════════════════════════════════════════════════════════════════
+📋 COMMANDES À EXÉCUTER DANS POWERSHELL
+═══════════════════════════════════════════════════════════════════════════════
+
+Ouvrez PowerShell et exécutez ces commandes une par une:
+
+
+1️⃣  ALLER DANS LE DOSSIER:
+
+cd "C:\Users\pc\Downloads\notre univers"
+
+
+2️⃣  INITIALISER GIT:
+
+git init
+
+
+3️⃣  AJOUTER VOTRE NOM ET EMAIL:
+
+git config user.name "Votre Nom"
+git config user.email "votre.email@gmail.com"
+
+
+4️⃣  AJOUTER TOUS LES FICHIERS:
+
+git add .
+
+
+5️⃣  FAIRE UN COMMIT:
+
+git commit -m "Initial commit: Notre Univers"
+
+
+6️⃣  AJOUTER LE REPO GITHUB (REMPLACEZ L'URL!):
+
+git remote add origin https://github.com/VOTREUSERNAME/notre-univers
+
+⚠️  REMPLACEZ "VOTREUSERNAME" par votre nom d'utilisateur GitHub!
+
+
+7️⃣  PUSHER VERS GITHUB:
+
+git branch -M main
+git push -u origin main
+
+
+🎉 ET VOILÀ! Vos fichiers sont sur GitHub!
+
+
+═══════════════════════════════════════════════════════════════════════════════
+🚀 DÉPLOYER SUR VERCEL
+═══════════════════════════════════════════════════════════════════════════════
+
+Une fois que les fichiers sont sur GitHub:
+
+1. Allez sur: https://vercel.com
+2. Cliquez "New Project"
+3. Sélectionnez votre repo "notre-univers"
+4. Cliquez "Deploy"
+5. ✨ Attendez 1-2 minutes
+6. 🎉 Votre URL est prête!
+
+
+═══════════════════════════════════════════════════════════════════════════════
+❓ AIDE RAPIDE
+═══════════════════════════════════════════════════════════════════════════════
+
+"Git n'est pas reconnu"
+→ Installez Git: https://git-scm.com
+
+"Permission denied"
+→ Utilisez un Personal Access Token GitHub (voir lien)
+
+"error: remote origin already exists"
+→ Exécutez: git remote remove origin
+→ Puis refaites l'étape 6
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+Questions? Dites-moi et j'aide! 🚀

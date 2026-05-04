@@ -1,0 +1,235 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                   NOTRE UNIVERS - GUIDE DE CONFIGURATION                    ║
+║                   ✨ 🌌 Personnalisez Votre Site 🌌 ✨                      ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+📌 ÉTAPE 1 : CHANGER LE MOT DE PASSE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Fichier : script.js (ligne 15)
+
+Cherchez :
+    PASSWORD: 'amour123',
+
+Remplacez par :
+    PASSWORD: 'votre-mot-de-passe-ici',
+
+Exemple :
+    PASSWORD: 'notremonde2024',
+
+💡 Conseil : Utilisez un mot de passe facile à mémoriser mais significatif!
+
+
+📌 ÉTAPE 2 : DÉFINIR LA DATE DE DÉBUT DE VOTRE HISTOIRE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Fichier : script.js (ligne 16)
+
+Cherchez :
+    COUPLE_START_DATE: '2023-01-14',
+
+Remplacez par :
+    COUPLE_START_DATE: 'YYYY-MM-DD',
+
+Exemple (14 juin 2022) :
+    COUPLE_START_DATE: '2022-06-14',
+
+Format : YYYY-MM-DD (Année-Mois-Jour)
+
+📋 Résultat : Le compteur affichera automatiquement le temps ensemble!
+
+
+📌 ÉTAPE 3 : PERSONNALISER LES MESSAGES D'AMOUR ALÉATOIRES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Fichier : script.js (cherchez "romanticMessages")
+
+Format original :
+    const romanticMessages = [
+        'Chaque moment avec toi est une constellation...',
+        'Tu es mon univers...',
+        ...
+    ];
+
+Comment ajouter votre message :
+    1. Ouvrez script.js
+    2. Trouvez la liste des messages
+    3. Ajoutez : 'Votre message ici 💕',
+    
+Exemple :
+    const messages = [
+        'Je t\'aime plus que tout',
+        'Tu es ma lumière',
+        'Forever with you 💫',
+    ];
+
+💡 Conseil : Chaque message doit être entre GUILLEMETS et se terminer par une VIRGULE
+
+
+📌 ÉTAPE 4 : AJOUTER DES SURPRISES PERSONNALISÉES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Fichier : script.js (cherchez "const SURPRISES")
+
+Format original :
+    const SURPRISES = [
+        "💌 \"Message d'amour\"",
+        "🎁 Défi couple: ...",
+        "🍽️ Idée rendez-vous: ...",
+    ];
+
+Comment ajouter :
+    1. Ouvrez script.js
+    2. Trouvez le tableau SURPRISES
+    3. Ajoutez une nouvelle ligne :
+       "Votre_emoji Votre_texte",
+
+Exemples à ajouter :
+    "💍 Défi: Dansez ensemble sous la pluie",
+    "🌅 Idée: Regardez le lever de soleil ensemble",
+    "🎭 \"Tu es mon plus beau rôle\"",
+
+💡 Conseil : Commencez par un emoji, puis votre texte!
+
+
+📌 ÉTAPE 5 : PERSONNALISER LE QUIZ
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Fichier : script.js (cherchez "const QUIZ_QUESTIONS")
+
+Format d'une question :
+    {
+        question: 'Quelle est ma couleur préférée ?',
+        options: ['Bleu', 'Rose', 'Violet', 'Noir'],
+        correctAnswer: 2,
+        emoji: '🎨'
+    }
+
+Explication :
+    - question : La question à poser
+    - options : Les 4 réponses possibles (tableau)
+    - correctAnswer : Index de la bonne réponse (0 = 1ère, 1 = 2e, 2 = 3e, 3 = 4e)
+    - emoji : Emoji pour décorer la question
+
+Comment créer une question :
+    1. Ouvrez script.js
+    2. Trouvez QUIZ_QUESTIONS
+    3. Avant la dernière }, ajoutez :
+
+    {
+        question: 'Votre question?',
+        options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+        correctAnswer: 0,
+        emoji: '❓'
+    },
+
+Exemple concret :
+    {
+        question: 'Quel est mon dessert préféré?',
+        options: ['Chocolat', 'Fraise', 'Vanille', 'Citron'],
+        correctAnswer: 1,
+        emoji: '🍰'
+    },
+
+💡 Conseil : Numérotez mentalement vos options à partir de 0!
+
+
+📌 ÉTAPE 6 : CHANGER LES COULEURS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Fichier : style.css (lignes 10-22)
+
+Cherchez : :root { --color-name: #HEX; }
+
+Couleurs principales à changer :
+    --gold: #FFD700;           (Couleur principale)
+    --violet: #9d4edd;         (Dégradés)
+    --blue: #3a86ff;           (Dégradés)
+    --pink: #ff006e;           (Accents)
+    --dark-bg: #0a0a0a;        (Arrière-plan)
+
+Comment trouver des codes couleur :
+    → Google "Color picker" ou "Hex color generator"
+    → Trouvez votre couleur
+    → Copiez le code HEX (ex: #FF5733)
+
+Exemple (Passer le gold au rose) :
+    --gold: #FF1493;           /* Rose Hot Pink */
+
+💡 Conseil : Testez dans votre navigateur avec F5 (rafraîchir)
+
+
+📌 ÉTAPE 7 : AJOUTER UNE POLICE PERSONNALISÉE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Fichier : index.html (ligne 6)
+
+Format actuel :
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+Polices disponibles gratuitement :
+    - Poppins (moderne, douce)
+    - Playfair Display (élégante, fine)
+    - Abril Fatface (luxueuse)
+    - Raleway (épurée)
+    - Great Vibes (manuscrite, romantique)
+
+Comment modifier :
+    1. Allez sur fonts.google.com
+    2. Cherchez votre police
+    3. Sélectionnez les poids (normal, bold)
+    4. Cliquez "Get embed code"
+    5. Copiez le <link>
+    6. Remplacez dans index.html
+
+Utiliser dans le CSS :
+    font-family: 'Votre Police', sans-serif;
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✨ RACCOURCI : COMMENT ÉDITER LES FICHIERS
+
+Windows :
+    1. Clic droit sur le fichier
+    2. "Ouvrir avec" → Notepad ou VS Code
+    3. Modifiez
+    4. Ctrl+S (sauvegarder)
+
+Mac :
+    1. Clic droit sur le fichier
+    2. "Ouvrir avec" → Textedit ou VS Code
+    3. Modifiez
+    4. Cmd+S (sauvegarder)
+
+Linux :
+    1. Double-clic ou clic droit
+    2. Ouvrir avec votre éditeur
+    3. Modifiez et sauvegardez
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 VÉRIFICATION RAPIDE
+
+Après chaque modification :
+    1. Sauvegardez le fichier (Ctrl+S ou Cmd+S)
+    2. Ouvrez index.html dans le navigateur
+    3. Appuyez sur F5 pour rafraîchir (Cmd+R sur Mac)
+    4. Vérifiez le changement
+    5. Videz le cache si nécessaire (Ctrl+Shift+Delete)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💡 CONSEILS PRATIQUES
+
+✓ Sauvegardez les fichiers originaux (copie de secours)
+✓ Ne modifiez qu'une chose à la fois
+✓ Si ça ne fonctionne pas, annulez (Ctrl+Z)
+✓ Consultez la console (F12) si erreur
+✓ Testez sur mobile aussi!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❤️ Amusez-vous à créer votre univers parfait! 🌌✨
+
+Pour plus d'aide, lisez README.md
