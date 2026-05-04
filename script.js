@@ -9,8 +9,10 @@
 
 const CONFIG = {
     PASSWORD: 'amour123', // Mot de passe pour accéder au site
-    COUPLE_START_DATE: '2023-01-14', // Date du début de la relation (modifier selon vos besoins)
+    COUPLE_START_DATE: '2023-01-14', // Fallback si localStorage est indisponible
 };
+
+const COUPLE_START_DATE_KEY = 'notre-univers-couple-start-date';
 
 const QUIZ_QUESTIONS = [
     {
@@ -349,9 +351,36 @@ function updateCoupleTimer() {
     const timerElement = document.getElementById('coupleTimer');
     if (!timerElement) return;
 
-    // Compteur masqué selon la demande utilisateur.
-    timerElement.textContent = '';
-    timerElement.style.display = 'none';
+    timerElement.style.display = '';
+
+    const startDate = new Date(getCoupleStartDate());
+    const today = new Date();
+    const timeDiff = today - startDate;
+    const days = Math.max(0, Math.floor(timeDiff / (1000 * 60 * 60 * 24)));
+
+    timerElement.textContent = `${days} jour${days > 1 ? 's' : ''} ensemble ❤️`;
+}
+
+function getCoupleStartDate() {
+    try {
+        let storedStartDate = localStorage.getItem(COUPLE_START_DATE_KEY);
+        if (!storedStartDate) {
+            storedStartDate = getTodayISODate();
+            localStorage.setItem(COUPLE_START_DATE_KEY, storedStartDate);
+        }
+        return storedStartDate;
+    } catch (error) {
+        // Fallback si localStorage n'est pas accessible.
+        return CONFIG.COUPLE_START_DATE;
+    }
+}
+
+function getTodayISODate() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
 }
 
 // ============================================
