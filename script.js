@@ -346,24 +346,12 @@ function switchSection(section) {
 // ============================================
 
 function updateCoupleTimer() {
-    const startDate = new Date(CONFIG.COUPLE_START_DATE);
-    const today = new Date();
-    
-    const timeDiff = today - startDate;
-    const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-    const months = Math.floor(days / 30);
-    const years = Math.floor(days / 365);
-    
-    let timerText = '';
-    if (years > 0) {
-        timerText = `${years} an${years > 1 ? 's' : ''} ensemble ❤️`;
-    } else if (months > 0) {
-        timerText = `${months} mois ensemble 💕`;
-    } else {
-        timerText = `${days} jours ensemble ✨`;
-    }
-    
-    document.getElementById('coupleTimer').textContent = timerText;
+    const timerElement = document.getElementById('coupleTimer');
+    if (!timerElement) return;
+
+    // Compteur masqué selon la demande utilisateur.
+    timerElement.textContent = '';
+    timerElement.style.display = 'none';
 }
 
 // ============================================
